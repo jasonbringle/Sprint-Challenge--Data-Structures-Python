@@ -39,4 +39,24 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        pass
+        #Assign a variable to the starting point for a while loop
+        current = self.head
+        #Assign a variable to be a type of 'previous' attribute.  First node in array must be None since it will be the last node in array when finished while loop
+        prev = None
+        #Check for a head
+        next = None
+        if not self.head:
+            #return if head not found
+            return 
+        #WHile loop based on a current position
+        while current:
+            #store the value of the next_node attribut for later use when assigning the next node in while loop
+            next = current.next_node
+            #Assign the current next_node attribute to the previous node via the "prev" variable.  
+            current.next_node = prev
+            #Change the prev variable to the current node for the next itereation
+            prev = current
+            #Change the current variable so the while loop will move to the next node
+            current = next 
+        #Assign the head to the last prev variable in the loop. This affectively finishes the code block by assigning the head to the former tail.
+        self.head = prev
