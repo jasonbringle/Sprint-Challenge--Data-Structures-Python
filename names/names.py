@@ -19,14 +19,18 @@ duplicates = []  # Return the list of duplicates in this data structure
 #             duplicates.append(name_1)
 
 #MVP
+#For every name in the first list
 # for name_1 in names_1:
+    # Check if the name is in the second list
 #     if name_1 in names_2:
+    #Add it to the duplicates array
 #         duplicates.append(name_1)
 
 # Stretch
+#Assign the two data arrays to two sets
 set_names1 = set(names_1)
 set_names2 = set(names_2)
-
+#Make duplicates array append the difference between the two arrays by using the intersection method
 duplicates = set_names1.intersection(set_names2)
 
 
